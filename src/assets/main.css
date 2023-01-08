@@ -1,0 +1,13 @@
+@import "ayoflex/dist/ayoflex.min.css";
+@import "./base.css";
+
+.font-22 {
+  font-size: 22px;
+}
+
+.light-section {
+}
+
+.dark-section {
+  background-color: #edf3fc;
+}
