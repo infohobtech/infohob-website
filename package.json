@@ -10,6 +10,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@vuepic/vue-datepicker": "^3.6.4",
     "ayoflex": "^1.0.1",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",

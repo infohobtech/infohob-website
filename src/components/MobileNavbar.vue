@@ -1,7 +1,10 @@
-<script setup></script>
+<script setup>
+import { defineEmits } from "vue";
+const emit = defineEmits(["itemClick"]);
+</script>
 
 <template>
-  <nav class="navbar">
+  <nav class="mobile-navbar" @click="emit(`itemClick`)">
     <a href="#about-us" class="link"> About </a>
     <a href="#services" class="link"> Tech Recruitment </a>
     <a href="#services" class="link"> Software Development </a>
@@ -9,6 +12,12 @@
 </template>
 
 <style scoped>
+.mobile-navbar {
+  background-color: #fff;
+}
+.mobile-navbar a {
+  display: block;
+}
 .link {
   font-weight: 500;
   font-size: 20px;

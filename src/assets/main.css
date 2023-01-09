@@ -1,13 +1,22 @@
-@import "ayoflex/dist/ayoflex.min.css";
+@import "./ayoflex.css";
 @import "./base.css";
+
+body {
+  background-image: url(/img/backgrounds/lightbg.jpg);
+  background-size: 100% auto;
+  font-weight: normal;
+}
 
 .font-22 {
   font-size: 22px;
 }
 
 .light-section {
+  background-color: #fff;
 }
 
 .dark-section {
   background-color: #edf3fc;
+  background-image: url(/img/backgrounds/darkbg.jpg);
+  background-size: 100% 100%;
 }

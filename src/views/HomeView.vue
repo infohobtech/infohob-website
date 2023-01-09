@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import TheButton from "../components/form/TheButton.vue";
 import InputText from "../components/form/InputText.vue";
 import TheCard from "../components/TheCard.vue";
@@ -43,12 +43,14 @@ const clients = [
       "Funded by YCombinator, alongside top companies like AirBnB, Stripe and PayStack."
   }
 ];
+
+const date = ref(new Date());
 </script>
 
 <template>
   <div class="home-page">
-    <div class="light-section">
-      <div class="container py-5">
+    <div class="intro-section px-3 px-md-0">
+      <div class="container py-7">
         <div class="row ai-center">
           <div class="col-md-6">
             <h1 class="mt-6">
@@ -67,10 +69,13 @@ const clients = [
             <img src="/img/girl-image.png" alt="" />
           </div>
         </div>
+        <br />
+        <br />
+        <br />
       </div>
     </div>
 
-    <div class="dark-section">
+    <div class="dark-section px-3 px-md-0" id="about-us">
       <div class="container py-5">
         <div class="row ai-center">
           <div class="col-md-6">
@@ -96,7 +101,7 @@ const clients = [
       </div>
     </div>
 
-    <div class="light-section">
+    <div class="light-section px-3 px-md-0" id="services">
       <div class="container py-7">
         <h1 class="text-center mt-2">Our Services</h1>
         <div class="row mt-7 jc-center">
@@ -127,7 +132,7 @@ const clients = [
       </div>
     </div>
 
-    <div class="dark-section">
+    <div class="contact-section px-3 px-md-0">
       <div class="container py-5">
         <div class="row">
           <div class="col-md-6">
@@ -158,10 +163,17 @@ const clients = [
             </div>
 
             <p class="mt-4">Select date for booking or a meeting</p>
-            <datepicker :inline="true" class="mt-2"></datepicker>
+            <Datepicker
+              v-model="date"
+              inline
+              auto-apply
+              class="mt-3"
+              :calendar-width="`600px`"
+            />
           </div>
 
-          <div class="col-md-6 pt-7">
+          <div class="col-md-6 pt-7 pl-0 pl-md-7">
+            <br />
             <InputText
               type="text"
               placeholder="Your Name"
@@ -193,13 +205,13 @@ const clients = [
             <div class="mt-2">
               <label>
                 <input type="radio" value="Recruitment Services" name="about" />
-                Recruitment Services
+                Tech Recruitment
               </label>
             </div>
             <div class="mt-1">
               <label>
                 <input type="radio" value="Outsourcing Services" name="about" />
-                Outsourcing Services
+                Software Development
               </label>
             </div>
 
@@ -222,9 +234,8 @@ const clients = [
             /> -->
 
             <textarea
-              style="border-color: #eaecf0; width: 100%; height: 111px"
               placeholder="Message"
-              class="mt-2 p-2 h-12"
+              class="message-textarea mt-3 h-12"
             />
 
             <div class="d-flex jc-end mt-2">
@@ -236,3 +247,37 @@ const clients = [
     </div>
   </div>
 </template>
+
+<style>
+.home-page {
+  margin-top: 92px;
+}
+.intro-section {
+  background-color: #edf3fc;
+  background-image: url(/img/backgrounds/lightbg.jpg);
+  background-size: 100% 100%;
+}
+
+.contact-section {
+  background-image: url(/img/backgrounds/contactbg.png);
+  background-size: 100% 100%;
+}
+
+.message-textarea {
+  /* border-color: #eaecf0; */
+  width: 100%;
+  height: 111px;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 33px;
+  padding: 9px 17px;
+  border: 2px solid var(--a-c-gray-500);
+  border-radius: 3px;
+}
+
+.message-textarea:focus-within {
+  outline: 1px solid var(--a-c-theme-300);
+  border: 2px solid var(--a-c-sky-600);
+}
+</style>

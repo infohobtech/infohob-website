@@ -1,7 +1,7 @@
 .a-input {
   font-size: var(--a-font-size, 16px);
   gap: 0.5em;
-  border: 1px solid var(--a-c-theme-500);
+  border: 2px solid var(--a-c-theme-500);
   border-radius: 0.2em;
   padding: 0.5em 0.75em;
   outline: 0 solid var(--a-c-theme-300);
@@ -26,7 +26,7 @@
 .a-input:not(.a-info):not(.a-success):not(.a-warning):not(.a-danger):not(
     :focus-within
   ) {
-  border: 1px solid var(--a-c-gray-300);
+  border: 2px solid var(--a-c-gray-500);
 }
 
 .a-input:focus-within {
