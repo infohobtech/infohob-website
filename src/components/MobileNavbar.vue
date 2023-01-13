@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 import { defineEmits } from "vue";
 const emit = defineEmits(["itemClick"]);
 </script>
