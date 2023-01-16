@@ -24,7 +24,7 @@ pipeline {
         stage('Build') {
           steps {
             echo 'Running build phase'
-            sh 'docker build -t infohob/infohob-frontend:latest .' // Docker build image
+            sh 'docker build -t infohob/infohob-website:latest .' // Docker build image
           }
         }
         stage('Deploy') {
@@ -32,7 +32,7 @@ pipeline {
             echo 'Running deploy phase'
             // input message: 'Do you want to deploy the web site? (Click "Proceed" to continue)'
             sh 'docker rm -f infohob-frontend || true'
-            sh 'docker run -d -p 5012:80 --name infohob-website infohob/infohob-frontend:latest' //Run docker container
+            sh 'docker run -d -p 5012:80 --name infohob-website infohob/infohob-website:latest' //Run docker container
           }
         }
         stage('Prune') {
