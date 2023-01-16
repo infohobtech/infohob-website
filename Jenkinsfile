@@ -32,7 +32,7 @@ pipeline {
             echo 'Running deploy phase'
             // input message: 'Do you want to deploy the web site? (Click "Proceed" to continue)'
             sh 'docker rm -f infohob-frontend || true'
-            sh 'docker run -d -p 5012:80 --name infohob-frontend infohob/infohob-frontend:latest' //Run docker container
+            sh 'docker run -d -p 5012:80 --name infohob_frontend infohob/infohob-frontend:latest' //Run docker container
           }
         }
         stage('Prune') {
