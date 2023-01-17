@@ -31,7 +31,7 @@ pipeline {
           steps {
             echo 'Running deploy phase'
             // input message: 'Do you want to deploy the web site? (Click "Proceed" to continue)'
-            sh 'docker rm -f infohob-frontend || true'
+            sh 'docker rm -f infohob-website || true'
             sh 'docker run -d -p 5012:80 --name infohob-website infohob/infohob-website:latest' //Run docker container
           }
         }
